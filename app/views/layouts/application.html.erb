@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
   <title>Mallotromy</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Gag'app</title>
+
+
+  <script src="javascripts/foundation/modernizr.foundation.js"></script>
+
 </head>
-<body>
+<body id="page" class="off-canvas">
 
 <%= yield %>
 
