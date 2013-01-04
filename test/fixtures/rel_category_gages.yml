@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gage_id: 1
+  category_id: 1
+  deleted: 1
+
+two:
+  gage_id: 1
+  category_id: 1
+  deleted: 1
