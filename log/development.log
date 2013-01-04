@@ -6520,6 +6520,7 @@ Processing by GageController#index as JSON
   [1m[35mGage Load (0.4ms)[0m  SELECT `gages`.* FROM `gages` 
 Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms)
 Connecting to database specified by database.yml
+<<<<<<< HEAD
   [1m[36m (294.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
   [1m[35m (395.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
   [1m[36m (27.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
@@ -19091,3 +19092,172 @@ Served asset /foundation/modernizr.foundation.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-04 12:08:01 +0100
 Served asset /application.js - 200 OK (55ms)
+=======
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (72.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (144.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (27.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateAdminUsers (20130102100922)
+  [1m[35m (36.1ms)[0m  CREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (152.4ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35m (120.7ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mAdminUser Exists (14.9ms)[0m  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `admin_users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-01-04 09:17:50', NULL, NULL, 'admin@example.com', '$2a$10$ce9u5T9ZrByg2/yrTE3/A.oNfwinFiJfmQZ.HsmsI0zT728/ECyA2', NULL, NULL, NULL, NULL, NULL, 0, '2013-01-04 09:17:50')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130102100922')[0m
+Migrating to CreateAdminNotes (20130102100927)
+  [1m[35m (46.0ms)[0m  CREATE TABLE `admin_notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `admin_user_id` int(11), `admin_user_type` varchar(255), `body` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (151.7ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `admin_notes` (`resource_type`, `resource_id`)[0m
+  [1m[35m (110.5ms)[0m  CREATE INDEX `index_admin_notes_on_admin_user_type_and_admin_user_id` ON `admin_notes` (`admin_user_type`, `admin_user_id`)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130102100927')[0m
+Migrating to MoveAdminNotesToComments (20130102100928)
+  [1m[35m (414.4ms)[0m  DROP INDEX `index_admin_notes_on_admin_user_type_and_admin_user_id` ON `admin_notes`
+  [1m[36m (33.4ms)[0m  [1mRENAME TABLE `admin_notes` TO `active_admin_comments`[0m
+  [1m[35m (6.8ms)[0m  SHOW COLUMNS FROM `active_admin_comments` LIKE 'admin_user_type'
+  [1m[36m (168.1ms)[0m  [1mALTER TABLE `active_admin_comments` CHANGE `admin_user_type` `author_type` varchar(255) DEFAULT NULL[0m
+  [1m[35m (1.6ms)[0m  SHOW COLUMNS FROM `active_admin_comments` LIKE 'admin_user_id'
+  [1m[36m (177.5ms)[0m  [1mALTER TABLE `active_admin_comments` CHANGE `admin_user_id` `author_id` int(11) DEFAULT NULL[0m
+  [1m[35m (139.1ms)[0m  ALTER TABLE `active_admin_comments` ADD `namespace` varchar(255)
+  [1m[36m (116.4ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35m (109.7ms)[0m  CREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)
+  [1m[36m (0.5ms)[0m  [1mUPDATE active_admin_comments SET namespace='admin'[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102100928')
+Migrating to CreateGages (20130102102645)
+  [1m[36m (158.3ms)[0m  [1mCREATE TABLE `gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102102645')
+Migrating to CreateCategories (20130102103020)
+  [1m[36m (160.6ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103020')
+Migrating to CreateDifficulties (20130102103107)
+  [1m[36m (139.5ms)[0m  [1mCREATE TABLE `difficulties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `level` int(11), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103107')
+Migrating to CreateGames (20130102103128)
+  [1m[36m (81.5ms)[0m  [1mCREATE TABLE `games` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103128')
+Migrating to CreateRelCategoryGages (20130102103208)
+  [1m[36m (98.1ms)[0m  [1mCREATE TABLE `rel_category_gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gage_id` int(11), `category_id` int(11), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103208')
+Migrating to CreateRelGameGages (20130102103242)
+  [1m[36m (94.4ms)[0m  [1mCREATE TABLE `rel_game_gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gage_id` int(11), `game_id` int(11), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103242')
+Migrating to AddDifficultyIdToGages (20130102103427)
+  [1m[36m (103.2ms)[0m  [1mALTER TABLE `gages` ADD `difficulty_id` int(11)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103427')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-01-04 10:18:19 +0100
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+Completed 401 Unauthorized in 73ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2013-01-04 10:18:19 +0100
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/georges/.rvm/gems/ruby-1.9.3-p327@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/devise/shared/_links.erb (2.3ms)
+  Rendered /Users/georges/.rvm/gems/ruby-1.9.3-p327@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (262.0ms)
+Completed 200 OK in 518ms (Views: 516.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /jquery.js - 200 OK (19ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin.css - 200 OK (14ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /jquery-ui.js - 200 OK (7ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 200 OK (70ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/lib/namespace.js - 200 OK (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 200 OK (4ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/components/jquery.aa.popover.js - 200 OK (5ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 200 OK (4ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/pages/application.js - 200 OK (6ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/pages/batch_actions.js - 200 OK (3ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/application.js - 200 OK (13ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/base.js - 200 OK (22ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin.js - 200 OK (24ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-01-04 10:18:20 +0100
+Served asset /active_admin/print.css - 200 OK (6ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2013-01-04 10:18:23 +0100
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rjoM/yZAR86FYNJ//7V9wHUW5ntwS1KG3T9Lvsn/vd0=", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'admin@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (2.7ms)[0m  UPDATE `admin_users` SET `last_sign_in_at` = '2013-01-04 09:18:24', `current_sign_in_at` = '2013-01-04 09:18:24', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2013-01-04 09:18:24' WHERE `admin_users`.`id` = 1
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 347ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-01-04 10:18:24 +0100
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1
+  Rendered /Users/georges/.rvm/gems/ruby-1.9.3-p327@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/page/index.html.arb (42.9ms)
+Completed 200 OK in 58ms (Views: 55.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-01-04 10:18:24 +0100
+Served asset /active_admin.js - 200 OK (2ms)
+
+
+Started GET "/admin/gages" for 127.0.0.1 at 2013-01-04 10:18:26 +0100
+Processing by Admin::GagesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM `gages` LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mDifficulty Load (0.3ms)[0m  [1mSELECT `difficulties`.* FROM `difficulties` [0m
+  Rendered /Users/georges/.rvm/gems/ruby-1.9.3-p327@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (432.9ms)
+Completed 200 OK in 449ms (Views: 431.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-nipple.png" for 127.0.0.1 at 2013-01-04 10:18:26 +0100
+Served asset /active_admin/datepicker/datepicker-nipple.png - 200 OK (27ms)
+
+
+Started GET "/assets/active_admin/datepicker/datepicker-input-icon.png" for 127.0.0.1 at 2013-01-04 10:18:26 +0100
+Served asset /active_admin/datepicker/datepicker-input-icon.png - 200 OK (11ms)
+>>>>>>> 7798ab5f0a3f5f8bfcf8f0eb5bb604b1fca9b210
