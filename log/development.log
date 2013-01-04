@@ -6687,3 +6687,95 @@ Served asset /active_admin/datepicker/datepicker-nipple.png - 200 OK (27ms)
 
 Started GET "/assets/active_admin/datepicker/datepicker-input-icon.png" for 127.0.0.1 at 2013-01-04 10:18:26 +0100
 Served asset /active_admin/datepicker/datepicker-input-icon.png - 200 OK (11ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/gages" for 127.0.0.1 at 2013-01-04 12:14:43 +0100
+Processing by GageController#index as HTML
+  [1m[36mGage Load (0.5ms)[0m  [1mSELECT `gages`.* FROM `gages` [0m
+  Rendered gage/index.html.erb within layouts/application (4.6ms)
+Compiled gage.js  (456ms)  (pid 3920)
+Compiled application.js  (12ms)  (pid 3920)
+Completed 200 OK in 959ms (Views: 949.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /application.css - 200 OK (30ms)
+
+
+Started GET "/assets/gage.css?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /gage.css - 200 OK (55ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /jquery-ui.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/angular.min.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /angular.min.js - 200 OK (2ms)
+
+
+Started GET "/assets/gage.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /gage.js - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /application.js - 200 OK (42ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/pages/application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/application.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin/base.js - 304 Not Modified (83ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-01-04 12:14:44 +0100
+Served asset /active_admin.js - 304 Not Modified (22ms)
+
+
+Started GET "/gages" for 127.0.0.1 at 2013-01-04 12:14:45 +0100
+Processing by GageController#index as JSON
+  [1m[35mGage Load (0.4ms)[0m  SELECT `gages`.* FROM `gages` 
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
