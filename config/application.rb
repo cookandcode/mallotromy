@@ -61,5 +61,8 @@ module Mallotromy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    #to desactivate sass generation
+    config.generators.stylesheets = false 
   end
 end
