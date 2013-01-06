@@ -6521,6 +6521,64 @@ Processing by GageController#index as JSON
 Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.4ms)
 Connecting to database specified by database.yml
 <<<<<<< HEAD
+  [1m[36m (37.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (21.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (1.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateAdminUsers (20130102100922)
+  [1m[35m (12.4ms)[0m  CREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (11.4ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35m (14.0ms)[0m  CREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAdminUser Exists (1.0ms)[0m  SELECT 1 AS one FROM `admin_users` WHERE `admin_users`.`email` = BINARY 'admin@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `admin_users` (`created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `last_sign_in_at`, `last_sign_in_ip`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES ('2013-01-04 10:25:49', NULL, NULL, 'admin@example.com', '$2a$10$KHTTejb6DAZUCOu6OslXk.49sWLmCYEHv3zdnCQ2FWs0JUk/n/aEi', NULL, NULL, NULL, NULL, NULL, 0, '2013-01-04 10:25:49')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130102100922')[0m
+Migrating to CreateAdminNotes (20130102100927)
+  [1m[35m (13.8ms)[0m  CREATE TABLE `admin_notes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` varchar(255) NOT NULL, `resource_type` varchar(255) NOT NULL, `admin_user_id` int(11), `admin_user_type` varchar(255), `body` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (11.2ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `admin_notes` (`resource_type`, `resource_id`)[0m
+  [1m[35m (11.9ms)[0m  CREATE INDEX `index_admin_notes_on_admin_user_type_and_admin_user_id` ON `admin_notes` (`admin_user_type`, `admin_user_id`)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20130102100927')[0m
+Migrating to MoveAdminNotesToComments (20130102100928)
+  [1m[35m (11.7ms)[0m  DROP INDEX `index_admin_notes_on_admin_user_type_and_admin_user_id` ON `admin_notes`
+  [1m[36m (0.6ms)[0m  [1mRENAME TABLE `admin_notes` TO `active_admin_comments`[0m
+  [1m[35m (1.3ms)[0m  SHOW COLUMNS FROM `active_admin_comments` LIKE 'admin_user_type'
+  [1m[36m (13.1ms)[0m  [1mALTER TABLE `active_admin_comments` CHANGE `admin_user_type` `author_type` varchar(255) DEFAULT NULL[0m
+  [1m[35m (1.0ms)[0m  SHOW COLUMNS FROM `active_admin_comments` LIKE 'admin_user_id'
+  [1m[36m (11.9ms)[0m  [1mALTER TABLE `active_admin_comments` CHANGE `admin_user_id` `author_id` int(11) DEFAULT NULL[0m
+  [1m[35m (11.4ms)[0m  ALTER TABLE `active_admin_comments` ADD `namespace` varchar(255)
+  [1m[36m (12.4ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35m (13.1ms)[0m  CREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)
+  [1m[36m (0.2ms)[0m  [1mUPDATE active_admin_comments SET namespace='admin'[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102100928')
+Migrating to CreateGages (20130102102645)
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE `gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102102645')
+Migrating to CreateCategories (20130102103020)
+  [1m[36m (11.4ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103020')
+Migrating to CreateDifficulties (20130102103107)
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE `difficulties` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `level` int(11), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103107')
+Migrating to CreateGames (20130102103128)
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE `games` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` varchar(255), `photo` varchar(255), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103128')
+Migrating to CreateRelCategoryGages (20130102103208)
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE `rel_category_gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gage_id` int(11), `category_id` int(11), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103208')
+Migrating to CreateRelGameGages (20130102103242)
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE `rel_game_gages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gage_id` int(11), `game_id` int(11), `deleted` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103242')
+Migrating to AddDifficultyIdToGages (20130102103427)
+  [1m[36m (11.5ms)[0m  [1mALTER TABLE `gages` ADD `difficulty_id` int(11)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20130102103427')
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-01-04 11:25:58 +0100
+Served asset /rails.png - 200 OK (2ms)
+=======
+<<<<<<< HEAD
   [1m[36m (294.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
   [1m[35m (395.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
   [1m[36m (27.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
@@ -19356,3 +19414,4 @@ Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
 =======
 >>>>>>> 7798ab5f0a3f5f8bfcf8f0eb5bb604b1fca9b210
 >>>>>>> 8333c0b3e3cbe5b2bf76ee4b534dd7cb0410c978
+>>>>>>> 2748a82fc51ea1d3e8be0d74428b7d574f7ee470
