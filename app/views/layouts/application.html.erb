@@ -6,19 +6,60 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-  <title>Mallotromy</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-  <meta charset="utf-8" />
+	<title>Mallotromy</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= csrf_meta_tags %>
+	<meta charset="utf-8" />
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
 
-  <title>Mallotromy</title>
+	<title>Mallotromy</title>
 
 
+<<<<<<< HEAD
   <script src="javascripts/foundation/modernizr.foundation.js"></script>
   <script type="text/javascript">
+=======
+	<script src="javascripts/foundation/modernizr.foundation.js"></script>
+
+</head>
+<body id="page" class="off-canvas">
+
+	<div class="container">
+
+
+		<div class="row">
+			<section role="main">
+
+				<header id="header" class="row">
+					<div class="four columns phone-two">
+						<h1 id="site-title"><a href="">Mallotromy</a></h1>
+					</div>
+					<div class="eight columns phone-two">
+						<nav id="menu" role="navigation" class="hide-for-small">
+							<ul id="nav" class="nav-bar">
+								<li><a href="" class="main">One</a></li>
+								<li><a href="" class="main">Two</a></li>
+								<li><a href="" class="main">Three</a></li>
+								<li><a href="" class="main">Four</a></li>
+							</ul>
+						</nav>
+						<p class="show-for-small">
+							<a class='menu-button button' href="#bottomNav">Menu</a>
+							<a class='sidebar-button button' id='sidebarButton' href="#sidebar" >Extra</a>
+						</p>
+					</div>
+				</header>
+
+
+<%= yield %>
+
+
+<!-- SCRIPT  -->
+<%= javascript_include_tag "application" %>
+<script type="text/javascript">
+>>>>>>> e6cce99297d92d35b93f67b966d598fde39c6447
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-37460322-1']);
