@@ -61,6 +61,6 @@ module Mallotromy
     config.assets.version = '1.0'
 
     #to desactivate sass generation
-    config.generators.stylesheets = false
+    config.generators.stylesheets = false 
   end
 end
