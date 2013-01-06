@@ -18,16 +18,7 @@
 
 
   <script src="javascripts/foundation/modernizr.foundation.js"></script>
-
-</head>
-<body id="page" class="off-canvas">
-
-<%= yield %>
-
-
-<!-- SCRIPT  -->
-<%= javascript_include_tag "application" %>
-<script type="text/javascript">
+  <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-37460322-1']);
@@ -40,6 +31,18 @@
   })();
 
 </script>
+</head>
+
+
+
+
+<body id="page" class="off-canvas">
+
+<%= yield %>
+
+
+<!-- SCRIPT  -->
+<%= javascript_include_tag "application" %>
 
 </body>
 </html>
