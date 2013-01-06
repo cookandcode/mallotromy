@@ -19635,3 +19635,4 @@ Served asset /active_admin.css - 200 OK (13ms)
 
 Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-01-06 16:11:11 +0100
 Served asset /active_admin/print.css - 200 OK (5ms)
+Connecting to database specified by database.yml
