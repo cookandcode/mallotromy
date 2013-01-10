@@ -1,6 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require 'rails/all' 
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -58,6 +58,9 @@ module Mallotromy
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.initialize_on_precompile = false
+
+    config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js)
+    config.assets.precompile += %w( *.js *.css )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
