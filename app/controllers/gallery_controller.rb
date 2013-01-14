@@ -3,6 +3,10 @@ class GalleryController < ApplicationController
 		#Dir.chdir("public") do 
 			#@images = Dir.glob("*.jpeg","*.jpg")
 		#end 
+		if File.directory?('gallery')
+			Dir.chdir("public/gallery")
+		end
+
 		@images = Dir.glob("*.jpg")
 		respond_to do |wants|
 			#wants.json { render :json => @gages  }
