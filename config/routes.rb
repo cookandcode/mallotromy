@@ -4,6 +4,8 @@ Mallotromy::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match 'gages' => 'gage#index', :as => :gage_index
+
+  match 'gallery' => 'gallery#index', :as => :gallery_index
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

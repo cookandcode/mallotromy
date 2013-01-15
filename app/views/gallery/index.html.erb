@@ -1,0 +1,74 @@
+<!-- <ul style="list-style:none;">
+	<% @images.each do |image| %>
+		<li style="heigth:50px;float:left;margin:5px 5px">
+			<a href='/gallery/<%=image%>' >
+				<%= image_tag "/gallery/"+image, :style => 'height:150px' %>
+			</a>
+		</li>
+	<% end %>
+</ul> -->
+
+
+<div class="gamma-container gamma-loading" id="gamma-container">
+ 
+    <ul class="gamma-gallery">
+    	<% @images.each do |image| 
+    		url = image[/\/.*/]
+    		alt = image[/Mallotromy.*\./]
+    	%>
+        <li>
+
+            <div data-alt="<%=alt%>" data-description="<h3><%=alt%></h3>" data-max-width="1800" data-max-height="2400">
+                <div data-src="<%= url %>" data-min-width="1300"></div>
+                <div data-src="<%= url %>" data-min-width="1000"></div>
+                <div data-src="<%= url %>" data-min-width="700"></div>
+                <div data-src="<%= url %>" data-min-width="300"></div>
+                <div data-src="<%= url %>" data-min-width="200"></div>
+                <div data-src="<%= url %>" data-min-width="140"></div>
+                <div data-src="<%= url %>"></div> 
+                <noscript>
+                    <%= image_tag url %>
+                </noscript>
+            </div>
+        </li>
+        
+        <% end %>
+        
+    </ul>
+ 
+    <div class="gamma-overlay"></div>
+
+</div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	$(function() {
+ 
+        var GammaSettings = {
+                // order is important!
+                viewport : [ {
+                    width : 1200,
+                    columns : 5
+                }, {
+                    width : 900,
+                    columns : 4
+                }, {
+                    width : 500,
+                    columns : 3
+                }, { 
+                    width : 320,
+                    columns : 2
+                }, { 
+                    width : 0,
+                    columns : 2
+                } ]
+        };
+ 
+        Gamma.init( GammaSettings );
+ 
+    });
+    }); 
+    
+ 
+</script>
+ 
