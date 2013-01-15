@@ -1,6 +1,10 @@
 Mallotromy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  config.action_dispatch.rack_cache = {
+    :metastore => Dalli::Client.new,
+    :entitystore => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -21,11 +25,7 @@ Mallotromy::Application.configure do
   config.assets.digest = true
 
 
-  config.action_dispatch.rack_cache = {
-    :metastore => Dalli::Client.new,
-    :entitystore => 'file:tmp/cache/rack/body'
-    :allow_reload => false
-  }
+  
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
