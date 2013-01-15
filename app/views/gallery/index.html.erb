@@ -9,27 +9,31 @@
 </ul> -->
 
 
-
 <div class="gamma-container gamma-loading" id="gamma-container">
  
     <ul class="gamma-gallery">
-    	<% @images.each do |image| %>
+    	<% @images.each do |image| 
+    		url = image[/\/.*/]
+    		alt = image[/Mallotromy.*\./]
+    	%>
         <li>
-            <div data-alt="<%=image%>" data-description="<h3><%=image%></h3>" data-max-width="1800" data-max-height="2400">
-                <div data-src="<%='/gallery/'+image%>" data-min-width="1300"></div>
-                <div data-src="<%='/gallery/'+image%>" data-min-width="1000"></div>
-                <div data-src="<%='/gallery/'+image%>" data-min-width="700"></div>
-                <div data-src="<%='/gallery/'+image%>" data-min-width="300"></div>
-                <div data-src="<%='/gallery/'+image%>" data-min-width="200"></div>
-                <div data-src="<%='/gallery/'+image%>" data-min-width="140"></div>
-                <div data-src="<%='/gallery/'+image%>"></div> 
+
+            <div data-alt="<%=alt%>" data-description="<h3><%=alt%></h3>" data-max-width="1800" data-max-height="2400">
+                <div data-src="<%= url %>" data-min-width="1300"></div>
+                <div data-src="<%= url %>" data-min-width="1000"></div>
+                <div data-src="<%= url %>" data-min-width="700"></div>
+                <div data-src="<%= url %>" data-min-width="300"></div>
+                <div data-src="<%= url %>" data-min-width="200"></div>
+                <div data-src="<%= url %>" data-min-width="140"></div>
+                <div data-src="<%= url %>"></div> 
                 <noscript>
-                    <%= image_tag "/gallery/"+image %>
+                    <%= image_tag url %>
                 </noscript>
             </div>
         </li>
+        
         <% end %>
-        <!-- ... -->
+        
     </ul>
  
     <div class="gamma-overlay"></div>
