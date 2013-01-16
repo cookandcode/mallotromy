@@ -24,6 +24,8 @@ Mallotromy::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.static_cache_control = "public, max-age=2592000"
+
 
   
 
