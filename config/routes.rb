@@ -6,6 +6,10 @@ Mallotromy::Application.routes.draw do
   match 'gages' => 'gage#index', :as => :gage_index
 
   match 'gallery' => 'gallery#index', :as => :gallery_index
+
+
+  match 'about' => 'static#about', :as => :about_static
+  match 'rules' => 'static#rules', :as => :rules_static
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
