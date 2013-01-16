@@ -15,9 +15,9 @@ SitemapGenerator::Sitemap.create do
   #
   # Examples:
   #
-  Add '/about'
-  Add '/rules'
-  Add '/gallery'
+  add '/about'
+  add '/rules'
+  add '/gallery'
   #
   #   add articles_path, :priority => 0.7, :changefreq => 'daily'
   #
