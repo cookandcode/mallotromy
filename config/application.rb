@@ -70,5 +70,7 @@ module Mallotromy
 
 
     config.cache_store = :dalli_store 
+    config.assets.css_compressor = :yui
+    config.assets.js_compressor = :uglifier
   end
 end

@@ -7,7 +7,7 @@
 
 <head>
 	<title>Mallotromy Application Jeu Alcool et Gages - Lille France</title>
-	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= stylesheet_link_tag  "application", :media => "all" %>
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8" />
 
@@ -44,6 +44,8 @@
 			</section>
 		</div>
 	</div>
+
+	<%= yield %>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-37460322-1']);
@@ -56,8 +58,6 @@
 	  })();
 
 	</script>
-
-<%= yield %>
 
 </body>
 </html>
