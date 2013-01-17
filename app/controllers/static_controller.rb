@@ -7,7 +7,7 @@ class StaticController < ApplicationController
 
   def rules
   	@title_page = "Les règles de Mallotromy - Lille France"
-	@meta_description = "Les regles du jeu Mallotromy. Jouer à malltromy durant vos soirée, mariages, enterrement de vie de garçon et enterrement de vie de jeune fille "
+	@meta_description = "Les regles du jeu Mallotromy. Jouer à malltromy durant vos soiree, mariages, enterrement de vie de garçon et enterrement de vie de jeune fille "
 	@meta_keyword = "Gages, Alcool, Jeu, Application, Lille, France, Mallotromy, règles, rules, soirée, mariages"
   end
 end
