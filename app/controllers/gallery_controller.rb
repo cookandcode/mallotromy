@@ -1,3 +1,6 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 class GalleryController < ApplicationController
 	def index
 		@title_page = "La galerie Mallotromy Lille France"
