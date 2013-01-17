@@ -6,29 +6,23 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-	<title>Mallotromy</title>
+	<title>Mallotromy Application Jeu Alcool et Gages - Lille France</title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8" />
 
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
-
-	<title>Mallotromy: jeu d'alcool et de gage pour animer vos soirées entre amis</title>
+	<meta name="description" content="Mallotromy est une application pour toutes vos soirées entre amis. Gages, jeux, alcool, " />
+	<meta name="keywords" content="Gages, Alcool, Jeu, Application, Lille, France, Mallotromy" />
 
 	<%= javascript_include_tag "application" %>
 
-	
-
 </head>
 <body id="page" class="off-canvas">
-
 	<div class="container">
-
-
 		<div class="row">
 			<section role="main">
-
 				<header id="header" class="row">
 					<div class="four columns phone-two">
 						<h1 id="site-title"><a href="http://mallotromy.herokuapp.com/">Mallotromy</a></h1>
@@ -36,10 +30,9 @@
 					<div class="eight columns phone-two">
 						<nav id="menu" role="navigation" class="hide-for-small">
 							<ul id="nav" class="nav-bar">
-								<li><a href="/about" class="main"> About Mallotromy</a></li>
-								<li><a href="/rules" class="main"> Mallotromy's rules </a></li>
-								<li><a href="/gallery" class="main"> Mallotromy's gallery</a></li>
-								<li><a href="" class="main">Four</a></li>
+								<li><a href="/about" class="main" title="a propos de mallotromy"> About Mallotromy</a></li>
+								<li><a href="/rules" class="main" title="les règles du jeu Mallotromy"> Mallotromy's rules </a></li>
+								<li><a href="/gallery" class="main" title="La gallerie des cocktails de Mallotromy"> Mallotromy's gallery</a></li>
 							</ul>
 						</nav>
 						<p class="show-for-small">
@@ -48,41 +41,25 @@
 						</p>
 					</div>
 				</header>
+			</section>
+		</div>
+	</div>
+
+	<%= yield %>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37460322-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
 
 
-<%= yield %>
-
-
-<!-- SCRIPT  -->
-
-
-
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37460322-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<script type="text/javascript">
-
-  // var _gaq = _gaq || [];
-  // _gaq.push(['_setAccount', 'UA-37688204-1']);
-  // _gaq.push(['_trackPageview']);
-
-  // (function() {
-  //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  // })();
-
-</script>
 
 </body>
 </html>
