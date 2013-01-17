@@ -1,11 +1,8 @@
 class GalleryController < ApplicationController
 	def index
-		#Dir.chdir("public") do 
-			#@images = Dir.glob("*.jpeg","*.jpg")
-		#end 
-		#if File.directory?('gallery')
-		#	Dir.chdir("public/gallery")
-		#end
+		@title_page = "La galerie Mallotromy Lille France"
+		@meta_description = "La galerie Mallotromy est pleine de photos de coktails, jeux d'alcool "
+		@meta_keyword = "Gages, Alcool, Jeu, Application, Lille, France, Mallotromy, gallery, galerie"
 
 		@rep = Dir.pwd()
 		@images = Dir["public/gallery/*.jpg"] #Dir.glob("*.jpg")
