@@ -6,15 +6,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-	<title>Mallotromy Application Jeu Alcool et Gages - Lille France</title>
+	<title><%= @title_page %></title>
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8" /> 
 
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
-	<meta name="description" content="Mallotromy est une application pour toutes vos soirées entre amis. Gages, jeux, alcool, " />
-	<meta name="keywords" content="Gages, Alcool, Jeu, Application, Lille, France, Mallotromy" />	
+	<meta name="description" content="<%= @meta_description %>" />
+	<meta name="keywords" content="<%= @meta_keyword %>" />	
 </head>
 <body id="page" class="off-canvas">
 	<div class="container">
