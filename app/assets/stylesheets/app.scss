@@ -1,8 +1,6 @@
 @import "initializer";
-
-h1 {
-	color: $secondary-color;
-}
-h2 {
-	color: $secondary-color-light;
-}
+@import "base";
+@import "layout";
+@import "module";
+@import "state";
+@import "theme";

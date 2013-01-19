@@ -1,0 +1,65 @@
+// Fichier compass pour un affichage pareil sur chaque navigateur
+@import "compass/reset";
+
+// Taille et couleur par défaut
+body, p {
+	font-family: 'Merriweather', georgia, arial;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding-bottom: 10px;	
+	color: $grey;
+}
+
+// Taille et couleur des titres
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: 'Merriweather', georgia, arial;
+	font-weight: 900;
+	margin: 10px 0 10px 0;
+}
+h1, .h1 {
+	color: $main-color;
+	font-size: 40px;
+	line-height: 40px;
+}
+
+h2, .h2 {
+	color: $main-color;
+	font-size: 30px;
+	line-height: 40px;
+}
+h3, .h3 {
+	color: $secondary-color;
+	font-size: 24px;
+	line-height: 40px;	
+}
+h4, .h4 {
+	color: $secondary-color;
+	font-size: 20px;
+	line-height: 20px;	
+}
+h5, .h5 {
+	color: $text-color-dark;
+	font-size: 18px;
+	line-height: 20px;	
+}
+h6, .h6 {
+	color: $text-color-dark;
+	font-size: 16px;
+	line-height: 20px;	
+}
+
+a {
+	color: $main-color;
+	padding-bottom: 1px;
+	&:hover {
+		color: $main-color;
+		padding-bottom: 0;
+		border-bottom: solid 1px $main-color; 		
+	}
+	&:active {
+		background: $background-color;
+		padding-bottom: 0;
+		border-bottom: solid 1px $main-color-dark; 
+		color: $main-color-dark;
+	}
+}

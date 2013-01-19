@@ -13,6 +13,7 @@ $main-color-light-2: #ffa459;
 $main-color-light-3: #ffb87d;
 $main-color-light-4: #ffcba1;
 $main-color-light-5: #ffdec4;
+$main-color-dark: #d96a10;
 
 // Couleur secondaire et ses teintes dérivées
 $secondary-color: $blue;
@@ -22,8 +23,18 @@ $secondary-color-light-3: #78c6c4;
 $secondary-color-light-4: #9cd4d3;
 $secondary-color-dark: #0a8989;
 
+// Couleur de fond et ses teintes dérivées
+$background-color: $beige;
+$background-color-light: #fff6eb;
+$background-color-light-2: #fffcf7;
+$background-color-dark: #e8dfd3;
+$background-color-dark-2: #f7eee2;
+
 // Couleur de texte et ses teintes dérivées
-$texte-color: $grey;
-$texte-color-light: #7d7c7c;
-$texte-color-light-2: #939392;
-$texte-color-dark: #565656;
+$text-color: $grey;
+$text-color-light: #7d7c7c;
+$text-color-light-2: #939392;
+$text-color-dark: #565656;
+
+// Importe la google WebFont Meriweahter en normal et bold
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);

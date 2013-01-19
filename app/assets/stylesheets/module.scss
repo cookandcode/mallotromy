@@ -1,0 +1,15 @@
+.is-small {
+	font-size: 13px;
+	line-height: 1.4em;
+}
+.is-very-small {
+	font-size: 11px;
+	line-height: 1.3em;
+}
+
+.is-light {
+	color: $text-color-light-2;
+}
+.clear, .clearfix {
+	clear:both;
+}
