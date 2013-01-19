@@ -4,7 +4,12 @@
 body {
 	background: $background-color;
 }
-
+// Retire la règle CSS3 box-sizing du fichier reset
+* {
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
 // Taille et couleur par défaut
 body, p {
 	margin: 0;
