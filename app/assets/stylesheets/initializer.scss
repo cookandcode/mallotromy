@@ -7,13 +7,13 @@ $grey: #666666;
 // Couleur sémantique
 
 // Couleur PRIMAIRE et ses teintes dérivées
-$main-color: $orange;
-$main-color-light: #ff9036;
-$main-color-light-2: #ffa459;
-$main-color-light-3: #ffb87d;
-$main-color-light-4: #ffcba1;
-$main-color-light-5: #ffdec4;
-$main-color-dark: #d96a10;
+$primary-color: $orange;
+$primary-color-light: #ff9036;
+$primary-color-light-2: #ffa459;
+$primary-color-light-3: #ffb87d;
+$primary-color-light-4: #ffcba1;
+$primary-color-light-5: #ffdec4;
+$primary-color-dark: #d96a10;
 
 // Couleur SECONDAIRE et ses teintes dérivées
 $secondary-color: $blue;
@@ -36,7 +36,17 @@ $text-color-light: #7d7c7c;
 $text-color-light-2: #939392;
 $text-color-dark: #565656;
 
+
 // Importe la google WebFont Meriweahter en normal et bold
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700);
 
 @import "compass/css3";
+
+// Dégradé PRIMAIRE
+.primary-gradient {
+	@include background-image(linear-gradient($primary-color-light, $primary-color));
+}
+.classic-gradient {
+	@include background-image(linear-gradient(#ffffff, #f0f0f0));
+
+}

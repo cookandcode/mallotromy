@@ -21,3 +21,26 @@
 	background: $background-color-light-2;
 	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
 }
+.tag {
+	color: $blue;
+	display: inline-block;
+	margin: 0 30px 0 0;
+	@extend .is-small;
+	font-weight: 700;
+}
+.btn {
+	display: inline-block;
+	padding: 4px 12px;
+
+	@extend .classic-gradient;
+	border: solid 1px $background-color-dark-2;
+	@include border-radius(8px);
+
+	font-weight: 700;
+
+	&.btn-primary {
+		border: solid 1px $primary-color-dark;
+		@extend .primary-gradient;
+		color: $background-color-light;
+	}
+}

@@ -29,13 +29,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-weight: 900;
 }
 h1, .h1 {
-	color: $main-color;
+	color: $primary-color;
 	font-size: 40px;
 	line-height: 40px;
 }
 
 h2, .h2 {
-	color: $main-color;
+	color: $primary-color;
 	font-size: 30px;
 	line-height: 40px;
 }
@@ -63,18 +63,18 @@ h6, .h6 {
 a {
 	padding-bottom: 1px;
 
-	color: $main-color;
+	color: $primary-color;
 	&:hover {
 		padding-bottom: 0;
 
-		color: $main-color;
-		border-bottom: solid 1px $main-color; 		
+		color: $primary-color;
+		border-bottom: solid 1px $primary-color; 		
 	}
 	&:active {
 		padding-bottom: 0;
 
 		background: $background-color;
-		border-bottom: solid 1px $main-color-dark; 
-		color: $main-color-dark;
+		border-bottom: solid 1px $primary-color-dark; 
+		color: $primary-color-dark;
 	}
 }
