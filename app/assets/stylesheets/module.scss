@@ -13,3 +13,11 @@
 .clear, .clearfix {
 	clear:both;
 }
+.is-box {
+	padding: 30px;
+
+	@include border-radius(8px);
+	border: solid 1px $background-color-dark-2;
+	background: $background-color-light-2;
+	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
+}
