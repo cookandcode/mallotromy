@@ -10,6 +10,6 @@
  *
  *= require_self
  * require_tree .
- *= require gage
- *= require_directory ./gamma
+ *= require app
+ *= require_directory ./gem/gamma
  */

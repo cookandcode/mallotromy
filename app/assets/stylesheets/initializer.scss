@@ -1,0 +1,29 @@
+// couleur hexadécimale
+$orange: #ff7d13;
+$blue: #0B9999;
+$beige: #f7eee2;
+$grey: #666666;
+
+// Couleur sémantique
+
+// Couleur principale et ses teintes dérivées
+$main-color: $orange;
+$main-color-light: #ff9036;
+$main-color-light-2: #ffa459;
+$main-color-light-3: #ffb87d;
+$main-color-light-4: #ffcba1;
+$main-color-light-5: #ffdec4;
+
+// Couleur secondaire et ses teintes dérivées
+$secondary-color: $blue;
+$secondary-color-light: #2fa8a7;
+$secondary-color-light-2: #53b7b6;
+$secondary-color-light-3: #78c6c4;
+$secondary-color-light-4: #9cd4d3;
+$secondary-color-dark: #0a8989;
+
+// Couleur de texte et ses teintes dérivées
+$texte-color: $grey;
+$texte-color-light: #7d7c7c;
+$texte-color-light-2: #939392;
+$texte-color-dark: #565656;
