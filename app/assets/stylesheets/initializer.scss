@@ -43,5 +43,7 @@ $text-color-dark: #565656;
 
 @import "compass/css3";
 
+@import "sprites/*.png";
+
 // Marge appliquée de manière persitente aux travers du design. Variabilisée pour le responsive
 $main-gutter: 30px; 

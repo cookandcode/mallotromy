@@ -9,13 +9,22 @@ header {
 	border-bottom:solid 1px $primary-color-light-4; 
 
 	@extend .primary-gradient;
+	h1 {
+		display: inline-block;
+		height:34px;
+		width: 137px;
+		vertical-align: middle;
+		text-align: center;
+
+		@include sprites-sprite(Swally-logo);
+	}
 	td {
 		height: 100%;
 		vertical-align: middle;
 	}
 	.logo {
 		width: 140px;
-		padding: $main-gutter;			
+		padding: 3px $main-gutter 0 $main-gutter;			
 	}
 	.quote {
 		padding-left: $main-gutter;
