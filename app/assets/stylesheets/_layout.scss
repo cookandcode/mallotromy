@@ -104,4 +104,11 @@ header {
 		font-weight: 400;
 		color: $text-color;
 	}
+	.filter {
+		margin-left: 60px;
+		float: left;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
 }

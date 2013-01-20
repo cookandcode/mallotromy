@@ -45,7 +45,7 @@
 	@include box-shadow(rgba(0,0,0,0.55) 0px 2px 1px);
 }
 .tag {
-	margin: 0 15px 0 0;
+	margin: 0 10px 0 0;
 	padding: 2px 13px;
 
 	@extend .rounded;
@@ -63,6 +63,7 @@
 	&:active, &.is-active {
 		background-color: $secondary-color-dark;
 		@include box-shadow(rgba(255,255,255,1) 0px 1px 1px);
+		color: $background-color-light;
 	}
 }
 // bar apparaissant en dessous de la bar principale, sert à des expliqcation et à du filtrage
