@@ -51,21 +51,38 @@
 <body id="page">
 
 	<header>
-		
+		<table>
+			<tbody>
+				<tr>
+					<td class="logo"></td>
+					<td class="quote"><p>"Ouhh, ça n'a pas du passer ça"</p></td>
+					<td class="user"><a href="">connexion</a><span> / </span><a href="">inscription</a></td>
+				</tr>
+			</tbody>
+		</table>		
 	</header>
 
-	<nav>
-		<ul>
-			<li><a href="">Playground</a></li>
-			<li><a href="">Règles</a></li>
-			<li><a href="">Jeux</a></li>
-			<li><a href="">Paramètres</a></li>
-		</ul>
-	</nav>
-
-	<div class="main-content">
-		<%= yield %>
-	</div>
+	<table>
+		<tbody>
+			<tr>
+				<td class="navigation">
+					<nav>
+						<ul>
+							<li><a href="">Playground</a></li>
+							<li><a href="">Règles</a></li>
+							<li><a href="">Jeux</a></li>
+							<li><a href="">Paramètres</a></li>
+						</ul>
+					</nav>
+				</td>
+				<td>
+					<div class="main-content">
+						<%= yield %>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 
 	<script type="text/javascript">
 		  var _gaq = _gaq || [];

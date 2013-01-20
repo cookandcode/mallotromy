@@ -27,8 +27,9 @@ $secondary-color-dark: #0a8989;
 $background-color: $beige;
 $background-color-light: #fff6eb;
 $background-color-light-2: #fffcf7;
+$background-color-dark-2: #f1e8dd;
 $background-color-dark: #e8dfd3;
-$background-color-dark-2: #d3cbc0;
+$background-color-dark-3: #d3cbc0;
 
 // Couleur de TEXTE et ses teintes dérivées
 $text-color: $grey;
@@ -42,11 +43,5 @@ $text-color-dark: #565656;
 
 @import "compass/css3";
 
-// Dégradé PRIMAIRE
-.primary-gradient {
-	@include background-image(linear-gradient($primary-color-light, $primary-color));
-}
-.classic-gradient {
-	@include background-image(linear-gradient(#ffffff, #f0f0f0));
-
-}
+// Marge appliquée de manière persitente aux travers du design. Variabilisée pour le responsive
+$main-gutter: 30px; 
