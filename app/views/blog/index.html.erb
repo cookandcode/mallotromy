@@ -1,0 +1,11 @@
+<div class="twelve columns">
+	<h2> Le blog </h2>
+
+	<% @articles.each do |article| %>
+		<h3> <%= article.title %> </h3>
+		<p>
+			<%= article.content %> 
+		</p>
+		<hr>
+	<% end %>
+</div>

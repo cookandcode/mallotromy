@@ -1,4 +1,6 @@
 Mallotromy::Application.routes.draw do
+  get "blog/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -10,6 +12,8 @@ Mallotromy::Application.routes.draw do
 
   match 'about' => 'static#about', :as => :about_static
   match 'rules' => 'static#rules', :as => :rules_static
+
+  match 'blog' => 'blog#index', :as => :blog_index
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
