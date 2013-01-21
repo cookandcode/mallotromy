@@ -7,6 +7,7 @@ gem 'thin'
 gem 'sitemap_generator'
 gem 'newrelic_rpm'
 gem 'yui-compressor'
+gem 'rack-rewrite'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
