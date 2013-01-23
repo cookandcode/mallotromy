@@ -8,7 +8,7 @@ ENV['RACK_ENV'] ||= 'development'
 if ENV['RACK_ENV'] == 'development' 
 	ENV['SITE_URL'] = 'localhost:3000' 
 else 
-	ENV['SITE_URL'] = 'mallotromy.com' 
+	ENV['SITE_URL'] = 'www.mallotromy.com' 
 end
 
 use Rack::Rewrite do 
