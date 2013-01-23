@@ -48,62 +48,25 @@
 	<meta name="keywords" content="<%= @meta_keyword %>" />	
 
 </head>
+
 <body id="page" class="off-canvas" itemscope itemtype="http://schema.org/WebPage">
-	<div class="fixed contain-to-grid">
-		<nav id="menu" role="navigation" class="top-bar" itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<ul>
-				<li class="name">	
-					<h1 id="site-title"><a href="http://www.mallotromy.com/" itemprop="url">Mallotromy</a></h1>
-				</li>
-			</ul>
-
-			<section>	
-				<ul id="nav" class="right">
-					<li><a href="http://www.mallotromy.com/about" class="main" title="a propos de mallotromy" itemprop="url"> About Mallotromy</a></li>
-					<li><a href="http://www.mallotromy.com/rules" class="main" title="les règles du jeu Mallotromy" itemprop="url"> Mallotromy's rules </a></li>
-					<li><a href="http://www.mallotromy.com/gallery" class="main" title="La gallerie des cocktails de Mallotromy" itemprop="url"> Mallotromy's gallery</a></li>
-					<li><a href="http://www.mallotromy.com/blog" class="main" title="blog de mallotromy" itemprop="url"> Blog </a></li>
-				</ul>
-			</section>
-		</nav>
-	</div>
-
-	<header class="row" style="margin:40px auto 0;" itemscope itemtype="http://schema.org/WPHeader">
-		<div class="twelve columns">
-			<h1 id="site-title"><a href="http://www.mallotromy.com/" itemprop="url">Mallotromy </a></h1>
-			<h4 itemprop="description">Jeu d'alcool et de gage pour animer vos soirées entre amis</h4>
-		</div>
-	</header>
+	<%= render "layouts/header" %>
 
 	<div class="row">
 		<%= yield %>
 	</div>
 
-	<hr>
-	<footer class="site-footer row" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-	  <h2> Mallotromy et ses partenaires </h2>
-	  <ul>
-	    <li> <a href="http://www.1001cocktails.com/" itemprop="url"> 1001cocktails </a> </li>
-	    <li> <a href="http://www.marmiton.org/recettes/selection_cocktail_et_boisson.aspx" itemprop="url"> Marmiton et ses Coktails</a> </li>
-	    <li> <a href="http://www.1001cocktails.com/cocktails/jeux/lister_jeu.php3" itemprop="url"> 1001cocktails et ses jeux d'alcool</a> </li>
-	    <li><a href="http://www.mallotromy.com/" itemprop="url">Mallotromy</a></li>
-	  </ul>
+	<%= render "layouts/footer" %>
 
-	</footer>
-
-	<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-37460322-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-
-	</script>
 	<%= javascript_include_tag "application" %>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
