@@ -1,11 +1,12 @@
 Mallotromy::Application.routes.draw do
-  get "blog/index"
+  # get "blog/index"
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match 'gages' => 'gage#index', :as => :gage_index
+  match 'landing' => 'gage#landing', :as => :gage_landing
 
   match 'gallery' => 'gallery#index', :as => :gallery_index
 

@@ -14,4 +14,7 @@ class GageController < ApplicationController
 			wants.html { render :index  }
 		end
 	end
+
+	def landing
+	end
 end
