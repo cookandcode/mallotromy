@@ -16,6 +16,25 @@ class GageController < ApplicationController
 	end
 
 	def landing
-		render :layout => "landing"
+		if !params[:newsletter].nil? && !params[:newsletter][:mail].nil?
+			@status = 'OK'
+			@message_error = ''
+			if !params[:newsletter][:mail].match(/^[\w.-]+@[\w]{2,}\.[a-z]{2,4}$/).nil?
+				#@verif_mail = Newsletter.new
+				@verif_mail = Newsletter.find_or_create_by_mail(:mail => params[:newsletter][:mail])
+			else
+				@message_error = 'Ce n\'est pas une adresse mail'
+				@status = 'bad format'
+			end
+		end
+		respond_to do |wants|
+			wants.json { render :json => {
+					:status => @status,
+					:message_error => @message_error,
+					:newsletter => @verif_mail
+				}
+			}
+			wants.html { render :layout => "landing" }
+		end
 	end
 end

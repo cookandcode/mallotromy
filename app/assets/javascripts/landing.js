@@ -14,6 +14,7 @@
 //= require ./landing/jquery-1.8.3.min
 //= require ./landing/bootstrap.min
 //= require ./landing/backstretch.min
+//= require page_landing
 
 
 $(function() {

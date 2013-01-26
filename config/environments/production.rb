@@ -27,6 +27,7 @@ Mallotromy::Application.configure do
 
   config.static_cache_control = "public, max-age=2592000"
 
+  config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js landing.js landing.css landing/*)
 
   
 
