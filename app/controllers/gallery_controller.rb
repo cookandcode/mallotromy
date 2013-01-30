@@ -1,8 +1,8 @@
 #!/bin/env ruby
 # encoding: utf-8
-layout 'landing'
-
 class GalleryController < ApplicationController
+	layout 'landing'
+	
 	def index
 		@title_page = "La galerie Mallotromy Lille France"
 		@meta_description = "La galerie Mallotromy est pleine de photos de coktails, jeux d'alcool "
