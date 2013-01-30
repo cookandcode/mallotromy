@@ -10,4 +10,5 @@
  *
  *= require_self
  *= require ./landing/screen
+ *= require_directory ./gamma
  */
