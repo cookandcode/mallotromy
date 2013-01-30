@@ -51,8 +51,32 @@
     
   </head>
   <body>
-    
-    <%= yield %>
+
+    <div id="wrapper">
+          <nav>
+            <ul id="nav">
+              <li>
+                <a href="http://www.mallotromy.com/about" class="main" title="a propos de mallotromy" itemprop="url"> A Propos de Mallotromy</a>
+              </li>
+              
+              <li>
+                <a href="http://www.mallotromy.com/rules" class="main" title="les règles du jeu Mallotromy" itemprop="url"> Les règles du Mallotromy </a>
+              </li>
+              
+              <li>
+                <a href="http://www.mallotromy.com/gallery" class="main" title="La gallerie des cocktails de Mallotromy" itemprop="url"> La Gallerie</a>
+              </li>
+              
+              <li>
+                <a href="http://www.mallotromy.com/blog" class="main" title="blog de mallotromy" itemprop="url"> Le Blog </a>
+              </li>
+            </ul>
+          </nav>
+          <hr>
+        
+          <%= yield %>
+    </div>
+
     
 
     <!-- I call the JS after to improve the performances -->
