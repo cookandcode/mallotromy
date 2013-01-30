@@ -1,5 +1,6 @@
 #!/bin/env ruby
 # encoding: utf-8
+layout 'landing'
 
 class GalleryController < ApplicationController
 	def index
