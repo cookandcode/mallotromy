@@ -1,7 +1,8 @@
 #!/bin/env ruby
 # encoding: utf-8
-
 class StaticController < ApplicationController
+  layout 'landing'
+  
   def about
   	@title_page = "À propos de  Mallotromy - Lille France"
 	  @meta_description = "Explication sur Mallotromy. Mallotromy est un jeu de gage et un jeu d'alcool pour se divertir en soirée "
