@@ -16,6 +16,10 @@ class GageController < ApplicationController
 	end
 
 	def landing
+		@title_page = "Application Mallotromy Jeu Alcool et Gages - Lille France" 
+		@meta_description = "Mallotromy est une application pour toutes vos soirées entre amis. Gages, jeux, alcool."
+		@meta_keyword = "Gages, Alcool, Jeu, Application, Lille, France, Mallotromy"
+		
 		if !params[:newsletter].nil? && !params[:newsletter][:mail].nil?
 			@status = 'OK'
 			@message_error = ''
