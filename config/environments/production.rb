@@ -28,8 +28,10 @@ Mallotromy::Application.configure do
   config.static_cache_control = "public, max-age=2592000"
 
   config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js landing.js landing.css landing/*)
-
+  #config.assets.precompile += %w(active_admin.css active_admin/print.css active_admin.js) #landing.js landing.css landing/*)
   
+  config.assets.css_compressor = :yui
+  config.assets.js_compressor = :uglifier
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH

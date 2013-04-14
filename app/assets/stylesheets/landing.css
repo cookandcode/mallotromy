@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require ./landing/screen
+ *= require ./landing/_screen
  *= require ./gamma/style
  *= require ./gamma/demo
 

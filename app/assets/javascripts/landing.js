@@ -14,7 +14,7 @@
 //= require ./landing/jquery-1.8.3.min
 //= require ./landing/bootstrap.min
 //= require ./landing/backstretch.min
-//= require_directory ./gamma
+// require_directory ./gamma
 //= require page_landing
 
 
