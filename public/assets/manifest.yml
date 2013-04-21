@@ -45,8 +45,8 @@ active_admin.js: active_admin-615f53605989f58aefd67f21b1661ab2.js
 active_admin/index.js: active_admin-615f53605989f58aefd67f21b1661ab2.js
 application.js: application-9b28a5d945712ba2ee51f5514cabdb8f.js
 application/index.js: application-9b28a5d945712ba2ee51f5514cabdb8f.js
-landing.js: landing-a68d7d7712c819b35e2d50b3e193ed4b.js
-landing/index.js: landing-a68d7d7712c819b35e2d50b3e193ed4b.js
+landing.js: landing-97113a53189a4df0e67d8db91dcb95c8.js
+landing/index.js: landing-97113a53189a4df0e67d8db91dcb95c8.js
 landing/backstretch.min.js: landing/backstretch.min-56e09e354acefd7bc1a9fc7174276001.js
 landing/backstretch/index.min.js: landing/backstretch.min-56e09e354acefd7bc1a9fc7174276001.js
 landing/bootstrap.min.js: landing/bootstrap.min-95b407f80e1fa09800922afe083cc69b.js
